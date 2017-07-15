@@ -55,8 +55,7 @@
                 'menu_position' => 3,
                 'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
                 'has_archive'   => true,
-  );
-          $args = array();
+            );
           register_post_type( 'Course', $args );
         }
         add_action( 'init', 'create_custom_post_course' );
