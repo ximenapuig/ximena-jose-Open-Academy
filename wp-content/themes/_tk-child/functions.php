@@ -5,11 +5,8 @@
      */
     if(!defined('ABSPATH')) define('ABSPATH', dirname(__FILE__) . '/');
     if(!defined('THEME_PATH')) define('THEME_PATH', ABSPATH . 'wp-content/themes/_tk-child/');
-<<<<<<< HEAD
-    require ABSPATH."vendor/autoload.php";
-=======
     require ABSPATH. "vendor/autoload.php";
->>>>>>> d1f9cab840e06246d31a59eed13410cb0bf49a40
+
 
     /**
      * Here we are importing the Styles of the parent theme and re-using them
