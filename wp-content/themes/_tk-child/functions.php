@@ -5,7 +5,11 @@
      */
     if(!defined('ABSPATH')) define('ABSPATH', dirname(__FILE__) . '/');
     if(!defined('THEME_PATH')) define('THEME_PATH', ABSPATH . 'wp-content/themes/_tk-child/');
+<<<<<<< HEAD
     require ABSPATH."vendor/autoload.php";
+=======
+    require ABSPATH. "vendor/autoload.php";
+>>>>>>> d1f9cab840e06246d31a59eed13410cb0bf49a40
 
     /**
      * Here we are importing the Styles of the parent theme and re-using them
@@ -31,6 +35,34 @@
      * Start your own functions here
      */
      
-     
+     function create_custom_post_course() {
+         $labels = array(
+            'name'               => _x( 'Courses', 'post type general name' ),
+            'singular_name'      => _x( 'Course', 'post type singular name' ),
+            'add_new'            => _x( 'Add New', 'course' ),
+            'add_new_item'       => __( 'Add New course' ),
+            'edit_item'          => __( 'Edit course' ),
+            'new_item'           => __( 'New course' ),
+            'all_items'          => __( 'All courses' ),
+            'view_item'          => __( 'View course' ),
+            'search_items'       => __( 'Search courses' ),
+            'not_found'          => __( 'No courses found' ),
+            'not_found_in_trash' => __( 'No courses found in the Trash' ),
+            'parent_item_colon'  => '',
+            'menu_name'          => 'courses'
+          );
+          
+            $args = array(
+                'labels'        => $labels,
+                'description'   => 'Displays courses',
+                'public'        => true,
+                'menu_position' => 3,
+                'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+                'has_archive'   => true,
+  );
+          $args = array();
+          register_post_type( 'Course', $args );
+        }
+        add_action( 'init', 'create_custom_post_course' );
      
 ?>
