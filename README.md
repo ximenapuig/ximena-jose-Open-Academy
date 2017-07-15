@@ -21,7 +21,7 @@
 7) Create the .gitignore
 
 
-8) Install composer
+8) Install composer Hola.
 
     {
         "repositories": [
