@@ -1,5 +1,5 @@
 <?php
-
+    require ("functions-jose.php");
     /**
      * Autoload for PHP Composer
      */
