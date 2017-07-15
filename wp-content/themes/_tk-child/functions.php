@@ -3,7 +3,9 @@
     /**
      * Autoload for PHP Composer
      */
-    require "vendor/autoload.php";
+    if(!defined('ABSPATH')) define('ABSPATH', dirname(__FILE__) . '/');
+    if(!defined('THEME_PATH')) define('THEME_PATH', ABSPATH . 'wp-content/themes/_tk-child/');
+    require ABSPATH."vendor/autoload.php";
 
     /**
      * Here we are importing the Styles of the parent theme and re-using them

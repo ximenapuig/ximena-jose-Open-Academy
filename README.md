@@ -6,6 +6,9 @@
 2) Install wordpress
 > wp core download
 
+2.5) Start Mysql
+> mysql-ctl start
+
 3) Generate DB
 > wp core config --dbname=c9 --dbuser=alesanchezr --dbpass={YOUR DATABASE PASSWORD}
 
@@ -21,7 +24,7 @@
 7) Create the .gitignore
 
 
-8) Install composer Hola.
+8) Install composer.
 
     {
         "repositories": [
