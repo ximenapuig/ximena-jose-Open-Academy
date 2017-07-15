@@ -5,8 +5,7 @@
      */
     if(!defined('ABSPATH')) define('ABSPATH', dirname(__FILE__) . '/');
     if(!defined('THEME_PATH')) define('THEME_PATH', ABSPATH . 'wp-content/themes/_tk-child/');
-    require ABSPATH. "vendor/autoload.php";
-
+    require ABSPATH."vendor/autoload.php";
 
     /**
      * Here we are importing the Styles of the parent theme and re-using them
@@ -56,8 +55,7 @@
                 'menu_position' => 3,
                 'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
                 'has_archive'   => true,
-  );
-          $args = array();
+            );
           register_post_type( 'Course', $args );
         }
         add_action( 'init', 'create_custom_post_course' );
