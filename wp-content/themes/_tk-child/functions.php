@@ -59,5 +59,25 @@
           register_post_type( 'Course', $args );
         }
         add_action( 'init', 'create_custom_post_course' );
+        
+        function your_function( $user_login, $user ) {
+            // your code
+            $a = get_user_by( 'id', $user->id );
+         //retrieve the user roles
+         $user_roles = $a->roles;
+         /**
+         * we'll be redirect users with student role to http://xyz.com/welcome-student/
+         * and those with teacher role to http://xyz.com/welcome-teacher/
+         * and those with other roles to http://xyz.com/welcome/
+         */
+         if ( in_array( 'administrator', $user_roles ) ) {
+             echo "COURSES";
+             wp_redirect('/course');
+             exit;
+         }
+         
+        }
+        add_action('wp_login', 'your_function', 10, 2);
+         
      
 ?>
