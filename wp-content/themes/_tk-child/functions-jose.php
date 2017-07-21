@@ -28,18 +28,22 @@
 
     //Controller for the signUp
     
-    use WPAS\Controller\WPASController;
+    use \WPAS\Controller\WPASController;
+    if(function_exists('is_wpas_plugin_active')){
+
+
     
-    $controller = new WPASController([
-        //options
-        "mainscript" => "/script.js"
-    ]);
-    
-    $controller->routeAjax([ 
-        'slug' => 'signup', 
-        'action' => 'signup', 
-        'scope' => 'public', 
-        'controller' => function(){
+        $controller = new WPASController([
+            //options
+            "mainscript" => "/script.js"
+        ]);
         
-            WPASController::ajaxSuccess('ciao');
-    }]);
+        $controller->routeAjax([ 
+            'slug' => 'signup', 
+            'action' => 'signup', 
+            'scope' => 'public', 
+            'controller' => function(){
+            
+                WPASController::ajaxSuccess('ciao');
+        }]);
+    }
