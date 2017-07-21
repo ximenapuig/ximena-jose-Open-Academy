@@ -1,6 +1,6 @@
 <?php
     
-    //Adding Roles
+    // creating roles for the teacher and students
     function createRoles(){
         add_role(
         'student',
@@ -23,3 +23,23 @@
         
     }
     add_action( 'init', 'createRoles' );
+
+
+
+    //Controller for the signUp
+    
+    use WPAS\Controller\WPASController;
+    
+    $controller = new WPASController([
+        //options
+        "mainscript" => "/script.js"
+    ]);
+    
+    $controller->routeAjax([ 
+        'slug' => 'signup', 
+        'action' => 'signup', 
+        'scope' => 'public', 
+        'controller' => function(){
+        
+            WPASController::ajaxSuccess('ciao');
+    }]);
