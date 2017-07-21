@@ -51,14 +51,19 @@
             $args = array(
                 'labels'        => $labels,
                 'description'   => 'Displays courses',
+                'hierarchical' => true,
                 'public'        => true,
                 'menu_position' => 3,
-                'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+                'supports'      => array('page-attributes', 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
                 'has_archive'   => true,
+                'taxonomies'  => array( 'category' ),
+
             );
           register_post_type( 'Course', $args );
         }
         add_action( 'init', 'create_custom_post_course' );
+       
+
         
         function your_function( $user_login, $user ) {
             // your code
@@ -71,8 +76,8 @@
          * and those with other roles to http://xyz.com/welcome/
          */
          if ( in_array( 'administrator', $user_roles ) ) {
-             echo "COURSES";
-             wp_redirect('/course');
+             //echo "COURSES";
+             wp_redirect('https://wordpress-project-imjose.c9users.io/logged-in-home-page/');
              exit;
          }
          

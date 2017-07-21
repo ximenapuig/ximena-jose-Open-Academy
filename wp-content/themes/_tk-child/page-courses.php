@@ -1,1 +1,1 @@
-<?php echo ("this is where the list of courses will be")?>
+
