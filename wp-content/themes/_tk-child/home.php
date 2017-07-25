@@ -12,7 +12,7 @@
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
                  <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="https://wordpress-project-imjose.c9users.io/wp-login.php">Log In</a></li>
+                    <li><a href="/wp-login.php">Log In</a></li>
                     
                  </ul>
               </div>

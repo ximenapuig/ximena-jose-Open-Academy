@@ -77,7 +77,7 @@
          */
          if ( in_array( 'administrator', $user_roles ) ) {
              //echo "COURSES";
-             wp_redirect('https://wordpress-project-imjose.c9users.io/logged-in-home-page/');
+             wp_redirect(get_permalink( get_page_by_path( 'logged-in-home-page' ) ));
              exit;
          }
          
