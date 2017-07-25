@@ -24,7 +24,7 @@
               <h2>By Jose & Ximena</h2>
               <p>Open Academy is an Academy created to learn on the go. With quick courses and mobile friendly you can flash through any of our courses in a quick 15 minutes.</p>
               <h2>Join Us!</h2>
-              <p><a class="btn btn-primary btn-lg" href="https://wordpress-project-imjose.c9users.io/signup/" role="button">Sign Up</a></p>
+              <p><a class="btn btn-primary btn-lg" href="/signup/" role="button">Sign Up</a></p>
             </div>
         </div>
         
