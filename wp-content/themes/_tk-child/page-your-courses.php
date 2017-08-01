@@ -3,8 +3,8 @@
     <h1>Here are your available courses!</h1>
     <?php
     $args = array(
-        'post_type' => 'course',
-        'category_name'  => 'course'
+        'post_type' => 'Course',
+        'category__in'  => 4
     );
     $courses = new WP_Query( $args );
     ?>

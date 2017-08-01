@@ -77,12 +77,20 @@
          */
          if ( in_array( 'administrator', $user_roles ) ) {
              //echo "COURSES";
-             wp_redirect(get_permalink( get_page_by_path( 'logged-in-home-page' ) ));
+             wp_redirect(get_permalink( get_page_by_path( 'your-courses' ) ));
              exit;
          }
          
         }
         add_action('wp_login', 'your_function', 10, 2);
          
-     
+         
+    //As an administrator I want to delete any user (no matter the role) from the system.
+    function wps_administrator_can_remove_users() {
+        $administrator = get_role( 'administrator' );
+        $administrator->add_cap( 'remove_users' );
+    }
+    add_action('wp_login', 'wps_administrator_can_remove_users', 10, 2);
+    
+   
 ?>
