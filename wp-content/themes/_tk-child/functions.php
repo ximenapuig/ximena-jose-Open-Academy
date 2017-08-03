@@ -65,7 +65,7 @@
        
 
         
-        function your_function( $user_login, $user ) {
+        function redirect_student_function( $user_login, $user ) {
             // your code
             $a = get_user_by( 'id', $user->id );
          //retrieve the user roles
@@ -75,22 +75,28 @@
          * and those with teacher role to http://xyz.com/welcome-teacher/
          * and those with other roles to http://xyz.com/welcome/
          */
-         if ( in_array( 'administrator', $user_roles ) ) {
+         if ( in_array( 'student', $user_roles ) ) {
              //echo "COURSES";
              wp_redirect(get_permalink( get_page_by_path( 'your-courses' ) ));
              exit;
          }
          
         }
-        add_action('wp_login', 'your_function', 10, 2);
+        add_action('wp_login', 'redirect_student_function', 10, 2);
          
-         
-    //As an administrator I want to delete any user (no matter the role) from the system.
-    function wps_administrator_can_remove_users() {
-        $administrator = get_role( 'administrator' );
-        $administrator->add_cap( 'remove_users' );
-    }
-    add_action('wp_login', 'wps_administrator_can_remove_users', 10, 2);
+        //search for courses
+        function search_for_courses(){
+
+            $args = array(
+                'post_type' => 'Course',
+                'category__in'  => 4
+            );
+            $courses = new WP_Query( $args );
+            foreach($courses->posts as $course){
+                    <li><a href="<?php echo get_the_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
+            } 
+        }
+
     
    
 ?>

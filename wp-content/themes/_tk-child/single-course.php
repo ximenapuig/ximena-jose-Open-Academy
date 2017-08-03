@@ -11,6 +11,7 @@
     ?>
         <div class="container">
         <h1>Lessons for <?php echo get_the_title(); ?> </h1>
+        <h3>Start from the last lesson and work your way up!</h3>
         <ul>
             <?php foreach($childs->posts as $lesson){ ?>
                 <li><a href="<?php echo get_the_permalink($lesson->ID); ?>"><?php echo $lesson->post_title; ?></a></li>
